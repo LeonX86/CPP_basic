@@ -1,1 +1,76 @@
-<div class="typora-export-sidebar"><div class="outline-content"><li class="outline-item-wrapper outline-h2"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#vscode中配置-cc-环境">VScode中配置 C/C++ 环境</a></div><ul class="outline-children"><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#1-下载编辑器vscode">1. 下载编辑器VScode</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#2-下载编译器mingw并解压">2. 下载编译器MinGW并解压</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#3-将mingw添加至环境变量">3. 将MinGW添加至环境变量</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#4-配置vscode插件">4. 配置VScode插件</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#5-运行代码">5. 运行代码</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#6-调整和优化">6. 调整和优化</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#7-提示">7. 提示</a></div><ul class="outline-children"></ul></li><li class="outline-item-wrapper outline-h4"><div class="outline-item"><span class="outline-expander"></span><a class="outline-label" href="#8-例行格式条款">8. 例行格式条款</a></div><ul class="outline-children"></ul></li></ul></li></div></div><div id='write'  class=''><h2 id='vscode中配置-cc-环境'><span>VScode中配置 C/C++ 环境</span></span></strong></td></tr></tbody></table></figure><h4 id='1-下载编辑器vscode'><span>1. 下载编辑器VScode</span></h4><ul><li><p><span>官网：</span><a href='https://code.visualstudio.com/'><span>https://code.visualstudio.com/</span></a><span>（点链接时按下Ctrl，不会覆盖当前页面哦^-^）</span></p><p><img src="vscode下载.png" alt="下载指引" style="zoom: 40%;" /></p></li></ul><p><span>   </span></p><ul><li><p><span>安装VScode（建议附加任务全部勾选）</span></p><p><img src="vscode安装.gif" alt="vscode安装" style="zoom: 67%;" /></p></li></ul><p>&nbsp;</p><p>&nbsp;</p><h4 id='2-下载编译器mingw并解压'><span>2. 下载编译器MinGW并解压</span></h4><ul><li><p><span>官网页面：</span><a href='https://www.mingw-w64.org/'><span>https://www.mingw-w64.org/</span></a></p></li><li><p><span>下载页面：</span><a href='https://sourceforge.net/projects/mingw-w64/files/'><span>https://sourceforge.net/projects/mingw-w64/files/</span></a></p><blockquote><p><span>你可以进入官网自行寻找</span></p><p><span>你也可以直接点击为你找好的下载页面</span></p></blockquote></li><li><p><span>下载页面中选择 </span><code>x86_64-win32-seh</code><span> 下载</span></p><p><img src="mingw下载.png" alt="mingw下载" style="zoom: 50%;" /></p><blockquote><p><span>如果你因为网络环境限制无法下载</span></p><p><span>不限速下载，请笑纳^-^：</span><a href='https://wwn.lanzouh.com/iLOip031ku6b' target='_blank' class='url'>https://wwn.lanzouh.com/iLOip031ku6b</a><span> 密码:1234</span></p></blockquote></li><li><p><span>在C盘中解压文件</span></p><p><img src="解压mingw.gif" style="zoom: 67%;" /></p><blockquote><p><span>理论上你可以在任何地方解压，但注意路径不能包含中文，至于特殊字符请自行测试</span></p></blockquote></li></ul><p>&nbsp;</p><p>&nbsp;</p><h4 id='3-将mingw添加至环境变量'><span>3. 将MinGW添加至环境变量</span></h4><ul><li><p><span>进入mingw64下的bin文件夹，复制当前路径，Win + i唤起系统设置，输入高级系统设置并进入，点击环境变量，选择path，编辑，新建，粘贴路径，按下三个确定</span></p><p><img src="配置环境变量.gif" style="zoom:67%;" /></p></li></ul><p>&nbsp;</p><p>&nbsp;</p><h4 id='4-配置vscode插件'><span>4. 配置VScode插件</span></h4><ul><li><p><span>打开VScode安装插件 </span><code>Chinese</code><span> 和 </span><code>C/C++</code><span> ，等待安装完毕后重启VScode</span></p><p><img src="安装插件.gif" style="zoom:67%;" /></p><p>&nbsp;</p></li><li><p><span>切换C/C++插件至 </span><code>1.8.4</code><span> 版本</span></p><p><img src="版本退回.png" style="zoom: 80%;" /></p><blockquote><p><span>因最新版本不会自动生成launch.json文件，给后续优化带来不便，故退回旧版本。</span></p></blockquote></li></ul><p>&nbsp;</p><p>&nbsp;</p><h4 id='5-运行代码'><span>5. 运行代码</span></h4><ul><li><p><span>新建文件夹，修改为英文名称并进入，右键 </span><code>通过Code打开</code><span> 若在安装时未勾选相关选项，可能没有这个选项，请自行在VScode内操作打开文件夹</span></p></li><li><p><span>新建一个文件，英文命名且扩展名为 </span><code>.c</code><span> </span></p></li><li><p><span>编写相关代码</span></p><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang="c"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="c"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 9.33333px; left: 8px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-meta">#include &lt;stdio.h&gt;</span></span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-meta">#include &lt;stdlib.h&gt;</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable-3">int</span> <span class="cm-def">main</span>()</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">{</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable">printf</span>(<span class="cm-string">"Hello World!\n"</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable">printf</span>(<span class="cm-string">"你好世界！\n"</span>);</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable">system</span>(<span class="cm-string">"pause"</span>);<span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-comment">// 防止运行后自动退出，需头文件stdlib.h</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">return</span> <span class="cm-number">0</span>;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 204px;"></div><div class="CodeMirror-gutters" style="display: none; height: 204px;"></div></div></div></pre></li><li><p><span>VScode菜单栏，点击运行，启动调试，稍等程序运行，输出结果在下方终端，上方调试面板，点击最右边的 </span><code>橙色方框</code><span> 停止程序运行</span></p></li></ul><p><img src="运行代码.gif" referrerpolicy="no-referrer"></p><p>&nbsp;</p><p>&nbsp;</p><h4 id='6-调整和优化'><span>6. 调整和优化</span></h4><blockquote><p><span>请根据自己的需要进行优化</span></p><p><span>代码运行后 </span><code>.vscode</code><span> 文件夹会自动生成在你的源文件目录下</span></p><p><code>.vscode</code><span> 文件夹下的 </span><code>task.json</code><span> 和 </span><code>launch.json</code><span> 用来控制程序的运行和调试</span></p></blockquote><ul><li><p><span>将程序运行在外部控制台【推荐】</span></p><ul><li><p><span>打开</span><code>.vscode</code><span> 文件夹下的 </span><code>launch.json</code><span> 文件，找到 </span><code>&quot;externalConsole&quot;: false,</code><span> 将 </span><code>false</code><span> 改为 </span><code>true</code><span> 并保存</span></p><p><img src="控制台.png" referrerpolicy="no-referrer"></p><p>&nbsp;</p></li></ul></li><li><p><span>解决中文乱码问题【推荐】</span></p><ul><li><p><span>打开</span><code>.vscode</code><span> 文件夹下的 </span><code>task.json</code><span> 文件，找到 </span><code>&quot;${fileDirname}\\${fileBasenameNoExtension}.exe&quot;</code><span> 在后面加上英文 </span><code>逗号</code><span> 然后回车到下一行，粘贴下面文本 </span><code>&quot;-fexec-charset=GBK&quot;</code><span> 并保存</span></p><p><img src="中文乱码.png" referrerpolicy="no-referrer"></p><p>&nbsp;</p></li></ul></li><li><p><span>收纳生成的 </span><code>exe</code><span> 可执行文件【可选】</span></p><ul><li><p><span>打开</span><code>.vscode</code><span> 文件夹下的 </span><code>task.json</code><span> 文件，找到 </span><code>&quot;${fileDirname}\\${fileBasenameNoExtension}.exe&quot;</code><span> </span></p></li><li><p><span>修改成 </span><code>&quot;${fileDirname}\\coin\\${fileBasenameNoExtension}.exe&quot;</code><span> 并保存，同理，</span><code>launch.json</code><span> 下也有相同的字段，需要你修改</span></p></li><li><p><span>在源文件同目录下新建 </span><code>coin</code><span> 文件夹，程序运行后，可执行文件将会生成在里面（其中 </span><code>coin</code><span> 可修改成你喜欢的英文名字）</span></p><blockquote><p><span>这样 </span><code>.c</code><span> 文件一多起来的时候，就不会出现 </span><code>.exe</code><span> 和 </span><code>.c</code><span> 相互穿插在目录中^-^</span></p></blockquote><p><img src="收纳exe.png" referrerpolicy="no-referrer"></p></li></ul></li></ul><p>&nbsp;</p><p>&nbsp;</p><h4 id='7-提示'><span>7. 提示</span></h4><ul><li><span>若源代码文件夹含有中文路径，将会无法编译程序。</span></li><li><span>若你的Windows用户名使用了中文，可能无法运行。</span></li><li><span>我知道GIF的自动播放，让你不知从何看起，没办法┗( T﹏T )┛</span></li></ul><p>&nbsp;</p><p>&nbsp;</p><h4 id='8-例行格式条款'><span>8. 例行格式条款</span></h4><ul><li><span>本文以自身分享为主，文中的提到的包括但不限于电脑操作、软件安装、点击链接，作者不保证有效性和可能发生的不利后果。</span></li><li><span>如需转载请在开头注明作者和出处</span></li></ul></div></div>
+# **VScode 中配置 C/C++ 环境**
+
+1. **下载编辑器 VScode**
+
+- 官网：[https://code.visualstudio.com/](https://code.visualstudio.com/)（点链接时按下 Ctrl，不会覆盖当前页面哦^-^）![](source\vscode下载.png)
+- 安装 VScode（建议附加任务全部勾选）
+  ![](source\vscode安装.gif)
+
+2.  ** 下载编译器 MinGW 并解压**
+    官网页面：[https://www.mingw-w64.org/](https://www.mingw-w64.org/)
+    下载页面：[https://sourceforge.net/projects/mingw-w64/files/](https://sourceforge.net/projects/mingw-w64/files/)
+
+> 你可以进入官网自行寻找
+> 你也可以直接点击为你找好的下载页面
+
+- 下载页面中选择 x86_64-win32-seh 下载
+  ![](source\mingw下载.png)
+
+> 如果你因为网络环境限制无法下载
+> 不限速下载，请笑纳^-^：[https://wwn.lanzouh.com/iLOip031ku6b](https://wwn.lanzouh.com/iLOip031ku6b) 密码:1234
+
+- 在 C 盘中解压文件
+  ![](source\解压mingw.gif)
+
+> 理论上你可以在任何地方解压，但注意路径不能包含中文，至于特殊字符请自行测试 3.  **将 MinGW 添加至环境变量**
+
+- 进入 mingw64 下的 bin 文件夹，复制当前路径，Win + i 唤起系统设置，输入高级系统设置并进入，点击环境变量，选择 path，编辑，新建，粘贴路径，按下三个确定
+  ![](source\配置环境变量.gif)
+
+4. **配置 VScode 插件**
+
+- 打开 VScode 安装插件 Chinese 和 C/C++ ，等待安装完毕后重启 VScode
+  ![](source\安装插件.gif)
+
+- 切换 C/C++插件至 1.8.4 版本
+  ![](source\版本退回.png)
+
+> 因最新版本不会自动生成 launch.json 文件，给后续优化带来不便，故退回旧版本。 5. **运行代码**
+
+- 新建文件夹，修改为英文名称并进入，右键 通过 Code 打开 若在安装时未勾选相关选项，可能没有这个选项，请自行在 VScode 内操作打开文件夹
+- 新建一个文件，英文命名且扩展名为 .c
+- 编写相关代码
+
+```
+#include <stdio.h>
+#include <stdlib.h>
+int main()
+{
+    printf("Hello World!\n");
+    printf("你好世界！\n");
+    system("pause");    // 防止运行后自动退出，需头文件stdlib.h
+    return 0;
+}
+```
+
+- VScode 菜单栏，点击运行，启动调试，稍等程序运行，输出结果在下方终端，上方调试面板，点击最右边的 橙色方框 停止程序运行
+
+6. **调整和优化**
+
+> 请根据自己的需要进行优化
+> 代码运行后 .vscode 文件夹会自动生成在你的源文件目录下
+> .vscode 文件夹下的 task.json 和 launch.json 用来控制程序的运行和调试
+
+- 将程序运行在外部控制台【推荐】
+- 打开.vscode 文件夹下的 launch.json 文件，找到 "externalConsole": false, 将 false 改为 true 并保存
+  ![](source\控制台.png)
+- 解决中文乱码问题【推荐】
+- 打开.vscode 文件夹下的 task.json 文件，找到 `${fileDirname}\\${fileBasenameNoExtension}.exe` 在后面加上英文 逗号 然后回车到下一行，粘贴下面文本 `-fexec-charset=GBK` 并保存
+  ![](source\中文乱码.png)
+- 收纳生成的 exe 可执行文件【可选】
+- 打开.vscode 文件夹下的 task.json 文件，找到 `${fileDirname}\\${fileBasenameNoExtension}.exe`
+  修改成 `${fileDirname}\\coin\\${fileBasenameNoExtension}.exe` 并保存，同理，`launch.json` 下也有相同的字段，需要你修改
+- 在源文件同目录下新建 `coin` 文件夹，程序运行后，可执行文件将会生成在里面（其中 `coin` 可修改成你喜欢的英文名字）
+  ![](source\收纳exe.png)
+
+> 这样 .c 文件一多起来的时候，就不会出现 .exe 和 .c 相互穿插在目录中^-^
