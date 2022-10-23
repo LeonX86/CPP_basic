@@ -1,5 +1,5 @@
-# **VScode 中配置 C/C++ 环境**
-
+# **C/C++ 环境配置 及基础入门笔记**
+#VScode 中配置 C/C++ 环境
 1. **下载编辑器 VScode**
 
 - 官网：[https://code.visualstudio.com/](https://code.visualstudio.com/)（点链接时按下 Ctrl，不会覆盖当前页面哦^-^）![](./source/vscode下载.png)
